@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unoffical guides to playing Clangen on Windows, MacOS, Linux, ChromeOS, and EVEN ANDROID (kinda).">
+    <title>Android Instructions | Stormlightcandev</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="build-instructions.html">Running Builds</a></li>
+            <li><a href="source-instructions.html">Running Source Code</a></li>
+            <li><a href="android.html" class="active">Running on Android</a></li>
+        </ul>
+    </div>
+    <h1 id="android-header">Clangen on Android</h1>
+    
+    <h2>Disclaimer!</h2>
+    <p>This is a gimmicky and subpar solution to running the game "natively" on Android. This is not an official clangen app, nor is it just a singular app required to play. Try the <a href="https://clangen-web.github.io" target="_blank">web port</a> made by <a href="https://github.com/TheBlackfurGuy" target="_blank">Blackfur</a>; only use my solution if the web port doesn't work, or you want the development version of the game for whatever reason.</p>
+    <div class="instructions">
+    <h2>Info</h2>
+    <p>To get Clangen running on Android, you will need to "sideload" apps. This is simply done by running the .apk files. You may need to change settings if it says something like "(Browser Name) is not allowed to install unknown apps."</p>
+    <h2>Prerequisites</h2>
+    <ol>
+        <li>F-Droid: Download <a href="https://f-droid.org/" target="_blank">here</a>. (Optional but recommended)
+        <li>Termux: Either download from <a href="https://f-droid.org/en/packages/com.termux/" target="_blank">F-Droid</a> or Termux's <a href="https://github.com/termux/termux-app/releases" target="_blank">Github repo</a>. If downloading from GitHub, the arm64 release is usually what you'll want. If you're unsure, universal should work.</li>
+        <li>A bit of tech knowledge and some patience!</li>
+    </ol>
+    <h2>Game Setup</h2> 
+    <p>Don't worry if this all seems complex, if I have written this correctly, you should be able to copy the commands word for word and it will work.</p>
+    <ol>
+        <li>Install Git via the command <code>pkg install git</code></li>
+        <li>Run the command <code>cd storage/shared/</code> to change into a directory you can see from a file manager to avoid future problems</li>
+        <li>Clone Clangen's repo with the command <code>git clone https://github.com/Thlumyn/clangen.git</code> then go into the folder with <code>cd clangen</code></li>
+        <li>Install Python with the command <code>pkg install python</code></li>
+        <li>Enable the TUR repos. <code>pkg install tur-repo</code></li>
+        <li>Install Pygame with <code>pkg install python-pygame</code> then install ujson with <code>pip install ujson</code></li>
+    </ol>
+    <h2>Setting up graphical environment</h2>
+    <p>(Instructions taken from <a href="https://wiki.termux.com/wiki/Graphical_Environment" target="_blank">Termux's Wiki</a>)</p>
+    <p>I'm sure you have noticed that the only thing Termux can do is run commands. How is Clangen going to run inside of it?</br>You can actually install graphical environments inside of Termux, just like you can on any normal Linux distro!</p>
+    <h3>X11 and VNC</h3>
+    <ol>
+        <li>Enable the x11 repos: <code>pkg install x11-repo</code></li>
+        <li>Get a VNC server installed with <code>pkg install tigervnc</code></li>
+        <li>Run <code>vncserver -localhost</code> and do the first-time setup for setting passwords. (You will not see the characters entered, it isn't a bug.)</li>
+        <li>Have the VNC server autostart with Termux by running <code>nano ~/.bashrc</code> and adding the text <code>vncserver -localhost</code> then toggle ctrl, press x, then press y to confirm.(Optional but very recommended)</li>
+        <li>Run <code>export DISPLAY=":1"</code> so that programs will know you have graphical output.</li>
+        <li>Choose a third-party VNC app to connect to the server. (I have personally only used <a href="https://play.google.com/store/apps/details?id=com.realvnc.viewer.android">VNC Viewer</a>)</li>
+    </ol>
+    <h3>XFCE Desktop Environment</h3>
+    <ol>
+        <li>Install xfce, one of the more user friendly graphical environments runnable with Termux: <code>pkg install xfce4</code></li>
+        <li>Run the command <code>nano ~/.vnc/xstartup</code> and add the below text. (Save and close with the ctrl button, then press x, then confirm with y</br>
+            <code>
+                #!/data/data/com.termux/files/usr/bin/sh </br>
+                xfce4-session &
+            </code>
+        </li>
+        <li>Re-Run the command <code>vncserver -localhost</code> to refresh it to use xfce now.</li>
+    </ol>
+    <h3>Connecting to VNC</h3>
+    <ol>
+        <li>Open up your VNC viewing app; These instructions will be specific to VNC Viewer, so you'll have to figure it out or look it up if you use something else.</li>
+        <li>Press the green plus button in the bottom right to add a server to connect to. Sent the address to be <code>localhost:5901</code> (if you haven't changed the port) and the name to be whatever you want.</li>
+        <li>Press the green connect button to connect for the first time!</li>
+    </ol>
+    <h3>Using the Desktop</h3>
+    <ul>
+        <li>It is recommended to put your phone sideways to get a better view of the desktop. You can zoom in and out by pinching your fingers on the screen.</li>
+        <li>In VNC Viewer, you move the mouse around by dragging your finger. Left clicks are a single finger tapping, and right clicks are two fingers tapping.</li>
+        <li>For a better fit, you can switch to a 16:9 resolution (or anything else you prefer) To switch the desktop resolution: click "Applications" on the top left, click "Settings" then "Settings Manager", go into "Display", and change to a resolution like 1280x720 or 1920x1080, or anything else!</li>
+    </ul>
+    <h3>Opening the Game</h3>
+    <h4>Method 1: Manually</h4>
+    <ol>
+        <li>Now that you have a desktop, you can run the game. First, go into the "Home" folder that is on the desktop. Now get to the clangen folder: storage > shared > clangen</li>
+        <li>Right Click (two fingered tap) on an empty space in the folder. Open terminal, then run the command <code>python main.py</code> and the game will open!</li>
+    </ol>
+    <h4>Method 2: Via a script (Recommended)</h4>
+    <ol>
+        <li>Go back into the Termux app. Change to your desktop directory with <code>cd ~/Desktop/</code></li>
+        <li>Run <code>wget https://stormlightcandev.xyz/clangen/clangen.sh</code> to download the game-running script.</li>
+        <li>Run <code>chmod +x clangen.sh</code> to make it an executable you can double click.</li>
+        <li>Return to your VNC app, and now there should be an icon on the desktop with the text "clangen.sh" under it. Double click it and the game should open!</li>
+    </ol>
+    </div>
+</body>
+</htm

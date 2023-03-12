@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unoffical guides to playing Clangen on Windows, MacOS, Linux, ChromeOS, and EVEN ANDROID (kinda).">
+    <title>Run Clangen Builds | Stormlightcandev</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="build-instructions.html" class="active">Running Builds</a></li>
+            <li><a href="source-instructions.html">Running Source Code</a></li>
+            <li><a href="android.html">Running on Android</a></li>
+        </ul>
+    </div>
+    <h1 id="build-header">Running Clangen Builds</h1>
+    <p class="medium-p">
+    <strong>
+    To a download a <a href="https://sablesteel.itch.io/clan-gen-fan-edit" target="_blank">stable build</a> go here.</br>
+    To a download a <a href="https://nightly.link/Thlumyn/clangen/workflows/build/development" target="_blank">development build</a> go here.
+    </strong>
+    </p>
+    <a href="#chromeos-and-linux-build">Jump to Linux and Chrome OS Instructions</a></br>
+    <a href="#macos-build">Jump to MacOS Instructions</a></br>
+    <a href="#windows-build">Jump to Windows Instructions</a></br>
+
+    <div class="instructions">
+        <div class="os" class="chromeos">
+         <img src="img/tux.jpg">
+         <img src="img/chrome.jpg">
+        <h2 id="chromeos-and-linux-build">Running build on Linux/Chrome OS</h2>
+        </div>
+        <h3>Prerequisites</h3>
+        <p>Download a <a href="#build-header">build of the game</a>. (Choose Linux Option)</p>
+        <h3>Enabling developer mode</h3>
+        <ol>
+            <li>Hold down Esc + &#8634 (Refresh Button) + ⏻ (Power Button).</li>
+            <li>After the screen with the exclamation point where it says <em>Chrome OS is missing or damaged</em>, press Ctrl + D on your keyboard at the same time. (Press enter if it prompts you to.)</li>
+            <li>That should be all; one thing to keep in mind, however, is that you may now get a message saying "OS Verification is off" whenever you boot your Chromebook.</li>
+        </ol>
+        <h3>Enabling Linux Features</h4>
+        <p>Google has a nice support page about enabling Linux <a href="https://support.google.com/chromebook/answer/9145439?hl=en" target="_blank">here.</a></p>
+        <h3>Setup</h3>
+        <ol>
+            <li>Ensure you have extracted the zip archive of the game. To do that, Right Click the File > Extract All (or something similar to that.)</li>
+            <li>Now find the file that ends in .tar.xz, right click it and extract, or if that doesn't work, right click > open in terminal > run this command: <code>tar -xf Clangen_Linux.tar.xz</code></li>
+            <li>Move into a folder if one got created, then go into the folder named "Clangen" after that. Make sure it isn't the zip or tar.xz archives.</li>
+            <li>Right click in the empty space then click "Open in Terminal"</li>
+            <li>Run the command <code>chmod +x ./Clangen</code> just in case it is not an executable for whatever reason, even though it should be already.</li>
+        </ol>
+        <h3>Running</h3>
+        <p>Now, whenever you want to run the game, go into the <code>Clangen_Linux64/Clangen/</code> file path, and double click the file named "Clangen". If that doesn't work, right click in the empty space, open in terminal, and run <code>./Clangen</code></p>
+        <div class="os" class="macos">
+        <img src="img/mac-logo.jpg">
+        <h2 id="macos-build">Running build on MacOS</h2>
+        </div>
+        <h3>Prerequisites</h3>
+        <ol>
+            <li>Download a <a href="#build-header">build of the game</a>, if you have not already.</li>
+        </ol>
+        <div class="os" class="windows">
+        <img src="img/windows-logo.jpg">
+        <h2 id="windows-build">Running build on Windows</h2>
+        </div>
+        <h3>Video</h3>
+        <p>There are video instructions for Windows available here, if you'd prefer that: </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/w-89_UQO2Qk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>Prerequisites</h3>
+        <ol>
+            <li>Download a <a href="#build-header">build of the game</a>, if you have not already.</li>
+        </ol>
+    </div>
+</body>
+</html>

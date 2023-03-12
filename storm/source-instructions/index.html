@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unoffical guides to playing Clangen on Windows, MacOS, Linux, ChromeOS, and EVEN ANDROID (kinda).">
+    <title>Run Clangen Source Code | Stormlightcandev</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="build-instructions.html">Running Builds</a></li>
+            <li><a href="source-instructions.html" class="active">Running Source Code</a></li>
+            <li><a href="android.html">Running on Android</a></li>
+        </ul>
+    </div>
+    <h1 id="source-header">Running Clangen Source Code</h1> 
+        <p class="medium-p"><strong>To download the <a href="https://github.com/Thlumyn/clangen/tree/development" target="_blank">source code</a>, click on the green "Code" button then click on "Download Zip."</br>
+            Make sure to extract!</strong>
+        </p>
+        <a href="#chromeos">Jump to Chrome OS Instructions</a></br>
+        <a href="#linux">Jump to Linux Instructions</a></br>
+        <a href="#macos">Jump to MacOS Instructions</a></br>
+        <a href="#windows">Jump to Windows Instructions</a></br>
+        <div class="instructions">
+            <div class="os" class="chromeos">
+                <img src="img/chrome.jpg">
+                <h2 id="chromeos">Running Source on Chrome OS</h2>
+            </div>
+                <p><strong>These instructions are for the source code only.</strong></p>
+                <p>If you are going to run Clangen on a Chromebook, there are a couple of things you need to do. First of all, you need to enable having (nearly) full Linux
+                features on it. <strong>Enabling developer mode will reset your devices local storage, be sure to back up any important files before continuing.</strong>
+                </p>
+                <h3>Enabling developer mode</h4>
+                <ol>
+                    <li>Hold down Esc + &#8634 (Refresh Button) + ⏻ (Power Button).</li>
+                    <li>After the screen with the exclamation point where it says <em>Chrome OS is missing or damaged</em>, press Ctrl + D on your keyboard at the same time. (Press enter if it prompts you to.)</li>
+                    <li>That should be all; one thing to keep in mind, however, is that you may now get a message saying "OS Verification is off" whenever you boot your Chromebook.</li>
+                </ol>
+                <h3>Enabling Linux Features</h4>
+                <p>Google has a nice support page about enabling Linux <a href="https://support.google.com/chromebook/answer/9145439?hl=en" target="_blank">here.</a></p>
+                <h3>Final prerequisites</h3>
+                <ol>
+                    <li>Make sure everything is up to date via running the command <code>sudo apt update && sudo apt upgrade</code> in the terminal.</li>
+                    <li>Run <code>sudo apt install python3 && sudo apt install python3-pip</code> to install Python and it's package manager.</li>
+                    <li>Finally, run <code>pip3 install pygame</code> and <code>pip3 install ujson</code> to install those two packages.</li>
+                </ol>
+                <h3>Running the game</h4>
+                <ol>
+                    <li>Go into your downloads folder with the file manager and locate the game's source code (file ends in .zip)</li>
+                    <li>Right click on the file and choose an option that says "Extract" or something similar.</li>
+                    <li>This should have now created a normal folder. (inside your downloads) Move into it.</li>
+                    <li>Now, right click on empty space inside this folder and choose "Open in Terminal".</li>
+                    <li>Inside the terminal, run <code>python3 main.py</code>. Try replacing "python3" with "python" if some problem happens.</li>
+                </ol>
+        </div>
+    
+        <div class="instructions">
+            <div class="os" class="linux">
+                <img src="img/tux.jpg">
+                <h2 id="linux">Running Source on Linux</h2>
+            </div>
+                <h3>Prerequisites</h3>
+                <p>You will need Python and Pip to run Clangen. Depending on your distribution of choice, you will need a different package manager for installing these.</p>
+                <h4>Arch Linux and Derivatives (Endeavour, Manjaro, etc.)</h4>
+                <ol>
+                    <li>Open up your terminal and run <code>sudo pacman -Syu</code> to perform a system update. If a core software like the kernel updated, reboot and come back.</li>
+                    <li>Run <code>sudo pacman -S python python-pip</code>.</li>
+                    <li>Install pygame and ujson with <code>pip3 install pygame && pip3 install ujson</code></li>
+                </ol>
+                <h4>Debian and Derivatives (Ubuntu, Linux Mint, LMDE, Zorin, etc.)</h4>
+                <ol>
+                    <li>Open your terminal and run <code>sudo apt update && sudo apt upgrade</code> to update your repos and system. Reboot if nessasary.</li>
+                    <li>Run <code>sudo apt install python3 python3-pip</code>.</li>
+                    <li>Install pygame and ujson with <code>pip3 install pygame && pip3 install ujson</code></li>
+                </ol>
+                <h4>Fedora</h4>
+                <ol>
+                    <li>Open your terminal and run <code>sudo dnf update</code> to update your repos. Reboot if nessasary.</li>
+                    <li>Run <code>sudo dnf install python3 python3-pip</code>.</li>
+                    <li>Install pygame and ujson with <code>pip3 install pygame && pip3 install ujson</code></li>
+                </ol>
+            <div class="os" class="macos">
+            <img src="img/mac-logo.jpg">
+            <h2 id="macos">Running Source on MacOS</h2>
+            </div>
+            <div class="os" class="windows">
+            <img src="img/windows-logo.jpg">
+            <h2 id="windows">Running Source on Windows</h2>
+            <h3>Method 1: Directly</h3>
+            <p>Here's a video if you prefer that over text:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XuZy3IX_5sM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Method 2: Using Thonny</h3>
+            <p>Here's also a video if you prefer it over text:</p>
+            </div>
+        </div>
+
+</body>
+</html>
